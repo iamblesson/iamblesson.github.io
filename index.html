@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>ATT Trigger script</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+  <script>
+  let scene
+  function checkIfTouchScreen() {
+    console.log(navigator.appVersion)
+    let touchScreen = false
+    if ((navigator.appVersion.indexOf('Android') !== -1) || (navigator.appVersion.indexOf('like Mac') !== -1)) {
+      touchScreen = true
+    } else if ((navigator.appVersion.indexOf('Mac') !== -1) || (navigator.appVersion.indexOf('Win') !== -1) || (navigator.appVersion.indexOf('Linux') !== -1)) {
+      touchScreen = false
+    }
+    return touchScreen
+  }
+  const isTouchScreen = checkIfTouchScreen()
+
+  if (!isTouchScreen) {
+    //desktop
+  url = 'https://xd.adobe.com/view/ffa31de7-b308-476f-ac06-d28ab813eeeb-aaf0/?fullscreen'
+  } else {
+    //mobile
+  url = 'https://xd.adobe.com/view/987933c6-7a72-41cf-96c7-f77b9bb46bd1-cd2a/?fullscreen'
+  }
+  window.open(url)
+  </script>
+</body>
+
+</html>
