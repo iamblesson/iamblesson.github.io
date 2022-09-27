@@ -22,7 +22,7 @@
   }
   const isTouchScreen = checkIfTouchScreen()
 
-  if (!isTouchScreen) {
+  if (!navigator.userAgentData.mobile) {
     //desktop
   url = 'https://xd.adobe.com/view/ffa31de7-b308-476f-ac06-d28ab813eeeb-aaf0/?fullscreen'
   } else {
